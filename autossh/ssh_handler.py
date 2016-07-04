@@ -7,7 +7,7 @@
 #       ssh_multi (c) 2015-2016 Vamegh Hedayati                          #
 #       paramiko (c) Jeff Forcier https://github.com/paramiko/paramiko   #
 #                                                                        #
-#       Vamegh Hedayati <vhedayati AT ev9 DOT eu>                        #
+#       Vamegh Hedayati <gh_vhedayati AT ev9 DOT io>                     #
 #                                                                        #
 #       Please see parmiko-license for License Information               #
 #                             GNU/LGPL v2.1 1999                         #

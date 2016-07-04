@@ -1,0 +1,43 @@
+---
+## config extras for ssh_multi
+
+#multi_thread: False
+multi_thread: True
+
+## quick commands to run using the -n --name option in ssh_multi -- feel free to add more commands and share.
+ssh_commands:
+  check_puppet_process:
+    command: "sudo -i ps -auwwx|grep puppet|grep -v grep"
+  puppet_noop:
+    command: "sudo -i puppet agent -vt --noop"
+  puppet_run:
+    command: "sudo -i puppet agent -vt"
+  check_name:
+    command: "uname -a"
+  puppet_kill:
+    command: "sudo -i pkill -9 puppet"
+  check_uptime:
+    command: "uptime"
+  check_listen:
+    command: "sudo -i lsof -i -n -P|grep LISTEN"
+  check_80:
+    command: "sudo -i lsof -i -n -P|grep LISTEN|grep '*:80 '"
+  check_443:
+    command: "sudo -i lsof -i -n -P|grep LISTEN|grep 443"
+  check_8080:
+    command: "sudo -i lsof -i -n -P|grep LISTEN|grep '*:8080 '"
+  check_java:
+    command: "sudo -i lsof -i -n -P|grep LISTEN|grep -i java"
+  check_http:
+    command: "sudo -i lsof -i -n -P|grep LISTEN|grep -i http"
+  check_nginx:
+    command: "sudo -i lsof -i -n -P|grep LISTEN|grep -i nginx"
+  check_clean:
+    command: ""
+  restart_nginx:
+    command: "sudo -i systemctl restart nginx"
+  restart_tomcat:
+    command: "sudo -i systemctl restart tomcat"
+  restart_apache:
+    command: "sudo -i systemctl restart httpd"
+

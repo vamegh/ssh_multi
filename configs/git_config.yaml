@@ -1,0 +1,11 @@
+---
+
+## git information
+git:
+  provisioner:
+    clone_path: 'autoipa'
+    remote_repo: 'git@github.com:vamegh/freeipa_python.git'
+  remote_provisioner:
+    clone_path: 'git-python'
+    remote_repo: 'git@github.com:vamegh/git_python.git'
+

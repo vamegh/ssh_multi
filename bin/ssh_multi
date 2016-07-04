@@ -1,0 +1,43 @@
+#!/usr/bin/python
+#
+##
+##########################################################################
+#                                                                        #
+#       ssh_multi                                                        #
+#                                                                        #
+#       ssh_multi (c) 2015-2016 Vamegh Hedayati                          #
+#                                                                        #
+#       Vamegh Hedayati <gh_vhedayati AT ev9 DOT io>                     #
+#                                                                        #
+#       Please see Copying for License Information                       #
+#                             GNU/LGPL v2.1 1999                         #
+##########################################################################
+##
+#
+
+from autossh import command_class, config_handler, multi_handler
+
+cmd_opts = command_class.Commands(name="ssh_multi")
+
+## Call in all of the appropriate command line flags for the commands class.
+cmd_opts.default_options()
+cmd_opts.multi_options()
+options, args, parser = cmd_opts.set_options()
+
+raw_cfg_data = config_handler.read_cfg(options=options, args=args, parser=parser)
+ssh_cmds  = config_handler.multi_check(options=options, parser=parser, rawcmds=raw_cfg_data)
+cfg_data, git_data, cmd_list = config_handler.scan_yaml(cmdcheck=ssh_cmds)
+
+max_threads, ip_count, ip_list = multi_handler.get_hosts(cmdcfg=cfg_data, options=options)
+response = multi_handler.warning_message(ip_list=ip_list, cmd_list=cmd_list, options=options)
+
+if response == "YES":
+  if cfg_data['multi_thread']:
+    multi_handler.thread_process(ip_count=ip_count, ip_list=ip_list, max_threads=max_threads,
+                   cmdcfg=cfg_data, cmd_list=cmd_list, options=options)
+  else:
+    multi_handler.single_process(ip_count=ip_count, ip_list=ip_list, max_threads=max_threads,
+                   cmdcfg=cfg_data, cmd_list=cmd_list, options=options)
+else:
+  print ("Nice to See You ... To See You ... \n")
+

@@ -1,0 +1,35 @@
+---
+
+## login information:
+## ssh username:
+ssh_user: "<some_user>"
+
+## ssh key passphrase / password
+## Password is not required if you are using an ssh agent, if however you are logging in as a different user,
+# or dont have your key stored in your agent this password will be used.
+# Also if you are using the pass auth method, then this will act as your password, for a key this will be the
+# passphrase.
+# If the password is commented out, it will ask for it on the command prompt
+#ssh_pass: "<some_pass>"
+
+## host ssh filters
+# if auth method is pass it will use login_user and pass below,
+# if it is key it will use the login_pass and ssh_private_key values
+# only if your key is not available in your ssh-agent
+# you must specify your login_user below regardless of auth_method
+ssh_timeout: "2"
+ssh_port: 22
+
+## either ignore, warn  or quiet -- beware,
+# the ignore option completely ignores host key checking, you will be susceptible to mitm attacks
+host_check: "quiet"
+
+## if not using an ssh agent -- specify your private ssh key
+# (full path) to use if auth_method is key, defaults to ~/.ssh/id_rsa
+ssh_key: "<path_to_key>/<ssh_key.key>"
+
+## auth_method can either be pass or key
+#  key with an ssh agent with the key already stored makes life a lot easier ...
+auth_method: "key"
+
+

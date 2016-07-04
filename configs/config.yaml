@@ -1,0 +1,6 @@
+---
+## read in all of the various configs -- this file just reads in the data from the various locations.
+user_config: "~/.ssh_multi/user_config.yaml"
+multi_config: "/etc/ssh_multi/multi_config.yaml"
+git_config: "/etc/ssh_multi/git_config.yaml"
+

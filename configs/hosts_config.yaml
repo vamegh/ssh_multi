@@ -1,0 +1,47 @@
+---
+## config containing host information
+
+# List of hosts to query, you can override the ssh parameters as defined within the user_config here,
+# so if a specific host requires special auth you can do the following:
+##
+# hosts:
+#  hostx:
+#   host: <whatever>
+#   ip: <whatever>
+#   ssh_user: user
+#   ssh_pass: password
+#   ssh_timeout: 2
+#   ssh_port: 2222
+#   auth_method: pass
+#
+# or any combination of the information from the user_config.yaml and this will then be used to over-ride the ssh auth
+# information
+#
+## Please do not ever publish actual hosts here or actual auth information (make sure this information stays private to you)
+## Also in reality this is a really tedious method of adding in all hosts that you may manage.
+## In reality if you already have a system where the host information already exists, you would be better off pulling host information
+## from that and feeding it into this tool. If you would like help doing this please feel free to contact me about it.
+## I am working on this linking directly to aws to be able to list aws vms and ssh to them on the fly based on data gathered from vpc's.
+
+hosts:
+  London:
+    dev:
+      host1:
+        host: 'host1.dev.example.com'
+        ip: '10.0.0.1'
+        role: 'web'
+      host2:
+        host: 'host2.dev.example.com'
+        ip: '10.0.0.2'
+        role: 'proxy'
+    stage:
+      host1:
+        host: 'host1.stage.example.com'
+        ip: '10.10.0.1'
+        role: 'proxy'
+      host2:
+        host: 'host2.stage.example.com'
+        ip: '10.10.0.2'
+
+## etc ...
+
