@@ -23,7 +23,7 @@ setup (
     "requests==2.9.1",
     "requests-futures==0.9.7",
     "sh==1.11",
-    "urllib3==1.13.1",
+    "urllib3==1.24.2",
   ],
   scripts=[
     'bin/ssh_multi',
