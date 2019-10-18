@@ -19,7 +19,7 @@ setup (
     "httplib2==0.9.1",
     "ipaddress==1.0.16",
     "paramiko==1.15.3",
-    "PyYAML==3.11",
+    "PyYAML==5.1",
     "requests==2.9.1",
     "requests-futures==0.9.7",
     "sh==1.11",
