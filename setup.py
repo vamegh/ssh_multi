@@ -16,7 +16,7 @@ setup (
   install_requires=[
     "futures",
     "futurist==0.13.0",
-    "httplib2==0.9.1",
+    "httplib2==0.18.0",
     "ipaddress==1.0.16",
     "paramiko==1.15.3",
     "PyYAML==3.11",
