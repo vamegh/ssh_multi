@@ -18,7 +18,7 @@ setup (
     "futurist==0.13.0",
     "httplib2==0.19.0",
     "ipaddress==1.0.16",
-    "paramiko==1.15.3",
+    "paramiko==2.0.9",
     "PyYAML==5.4",
     "requests==2.20.0",
     "requests-futures==0.9.7",
