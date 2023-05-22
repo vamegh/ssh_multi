@@ -20,7 +20,7 @@ setup (
     "ipaddress==1.0.16",
     "paramiko==2.0.9",
     "PyYAML==5.4",
-    "requests==2.20.0",
+    "requests==2.31.0",
     "requests-futures==0.9.7",
     "sh==1.11",
     "urllib3==1.26.5",
